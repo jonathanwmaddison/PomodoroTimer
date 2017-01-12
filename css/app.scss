@@ -1,0 +1,260 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/font-awesome/css/font-awesome.min.css";
+@import "../node_modules/animate.css/animate.min.css";
+@import "color";
+@import "carousel";
+
+
+//MY CSS
+#timeLeft .minSecFormat{
+  font-size: 2vw;
+}
+#container {
+ background-color: #B4BAA9;
+ width: 100vw;
+ padding: 0;
+
+}
+.glyphicon {
+  font-size: 1vw;
+  top: 0;
+}
+.currentTask {
+padding-left: 3vw;
+font-size: 2vw;
+border-bottom: 1px solid white;
+}
+.button-row {
+  width: 10vw;
+
+}
+.button-row:nth-of-type(1) {
+  margin-left: 36.5vw;
+}
+
+.col-sm-4 {
+    padding: 0;
+}
+button, input, select, textarea {
+    font-size: 1.7vw;
+}
+
+body{
+  background-color: #B4BAA9;
+  font-family: 'Raleway';
+    position: relative;
+
+}
+h1{
+  color: #ECECEA;
+  font-size:5vw;
+  display: inline;
+  text-align: center;
+}
+h2 {
+  display:inline;
+  font-size: 2vw;
+  color: #ECECEA;
+}
+h3{
+  font-size: 3vw;
+  text-align: center;
+  color: #ECECEA;
+}
+h4{
+  font-size:1.5vw;
+  background-color: #d4dbc7;
+  border: 2px solid #ECECEA;
+  padding-top: .5vw;
+  padding-bottom: .5vw;
+  margin-bottom: 2vw;
+  margin-top: 2vw
+}
+.controlButtons, .addRemove {
+    font-size: 1.5vw;
+    width: 7vw;
+    height: 4vw;
+}
+.controlButtons{
+   background-color: #778776;
+  color: white;
+    border-radius: 20%;
+
+}
+
+#mins{
+  font-size: 3vw;
+  color: #ECECEA;
+}
+#sec{
+  font-size: 3vw;
+  color: #ECECEA;
+}
+.switch {
+  margin-top: 3vw;
+  position: relative;
+  display: inline-block;
+  width: 8vw;
+  height: 4vw;
+  
+}
+.switch input {display:none;}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 3vw;
+  width: 3vw;
+  left: .5vw;
+  bottom: .5vw;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: #778776;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 .1vw #778776;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(4vw);
+  -ms-transform: translateX(4vw);
+  transform: translateX(4vw);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 8vw;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.addRemove:nth-of-type(1){
+  background-color: #778776;
+}
+.addRemove:nth-of-type(2){
+  background-color: #C75812;  
+}
+.addRemove{
+  color: white;
+  border-radius: 100%;
+  width: 3vw;
+  height:3vw;
+  padding: 0;
+  margin: 0;
+}
+
+#taskHistory{
+  font-size:1.0vw;
+  background-color: #d4dbc7;
+  border: 3px solid #ECECEA;
+  padding-top: .5vw;
+  padding-bottom: .5vw;
+  margin-bottom: 2vw;
+  width: 100vw;
+}
+#taskList{
+    font-size: 1.5vw;
+
+}
+.taskHistory {
+  font-size: 1.5vw;
+}
+p #currentTask {
+  padding-left: 50vw; 
+  font-size: 2.3vw;
+}
+#timeLeft{
+  color: #ECECEA;
+  font-size:8vw;
+;
+ padding-bottom: 0vw;
+  margin: 0 auto;
+
+}
+.jumbotron p {
+}
+
+/* EXAMPLE CSS STARTS */
+.jumbotron {
+    padding-top: 58px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    background-color: #B4BAA9;
+    
+}
+#about-us {
+      padding-top: 2vw;
+}
+#marketing {
+    padding-top: 60px;
+    .col-lg-4 {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    h2 {
+        font-weight: normal;
+    }
+    .col-lg-4 p {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+}
+
+.featurette-divider {
+    margin: 80px 0;
+}
+
+.featurette-heading {
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+#contact-us .jumbotron {
+    background-color: #ffffff;
+    p {
+        &:not(:first-of-type) {
+            font-size: 18px;
+        }
+    }
+}
+
+.footer {
+    padding: 40px 0;
+    color: #999;
+    text-align: center;
+    background-color: #f8f8f8;
+    border-top: 1px solid #e7e7e7;
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .featurette-heading {
+        font-size: 50px;
+    }
+}
+
+@media (min-width: 992px) {
+    .featurette-heading {
+        margin-top: 120px;
+    }
+}
+
+/* EXAMPLE CSS ENDS */

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Simple javascript timer app">
+    <meta name="author" content="Jonathan Maddison">
+    <title>Timer App</title>
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="build/style.css" />
+</head>
+
+<body>
+
+    <!--EXAMPLE PAGE STARTS-->
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Pomodoro Timer</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#" id="scrollTo-myCarousel">Home</a></li>
+                    <li><a href="#about" id="scrollTo-about-us">Task History</a></li>
+                    <li><a href="#contact" id="scrollTo-contact-us">Contact</a></li>
+                    <li><a href="#" id="scrollTo-myCarousel" class="showTime"> </a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+
+    <!--My Timer App -->
+    <div class="timer-container">
+        <div class="jumbotron text-center">
+            
+            <h1 id="timeLeft"> 25 mins
+            </h1>
+            <button class="addRemove" type="button" onclick="addTime()"> 
+                <span class="glyphicon glyphicon-plus"></span>
+            </button>
+            <button class="addRemove" type="button" onclick="removeTime()"> 
+
+                <span class="glyphicon glyphicon-minus"></span>
+            </button>
+        </div>
+   
+        <div id = "container" class="container">
+            <iframe id = "video" src="" width="0" height="0" frameborder="0" allowfullscreen></iframe>
+            <div id="currentTask" class="row text-center">
+                <div class="col-xs-4 col-xs-offset-4">
+      		        <h4 id="workOrBreak"> Work </h4>
+                </div>
+            </div>
+            <div class = "row text-center">
+                <div class = "col-lg-12">
+          			<input id="taskForm" placeholder="Add your current task" type="text">
+      		    </div>
+            </div>
+            <div class="row text-center">
+                <div class = "col-lg-12">
+                    <button type="button" class="controlButtons" onclick="submitTask(document.getElementById('taskForm').value)">Track</button>
+                </div>
+            </div>
+        	<div class="row" >
+        			<div class = "button-row col-xs-4"><input class="controlButtons" type="button" value="Start" onclick="startTimer()"/></div>
+ 		        	<div class = "button-row col-xs-4"><input class="controlButtons " type="button" value="Pause" onclick="stopTimer()"/></div>
+ 		        	<div class = "button-row col-xs-4"><input class="controlButtons" type="button" value="Reset" onclick="resetTimer()"/></div>
+            </div>
+        	<div class="row text-center">
+        		<label class="switch" data-toggle="tooltip" title="Toggle Work/Break">
+          			<input type="checkbox" onclick="switchDisplay()">
+          			<div class="slider round"></div>
+        		</label>
+        	</div>
+      	</div>
+  <!-- END MY TIMER APP -->
+
+    <!-- CAROUSEL -->
+    
+    <!-- ABOUT US -->
+    <div id="about-us">
+            <div id="taskHistory">
+            <h1 style="font-size: 3vw; color: black"><i>Task History</i></h1><hr/>
+          		<p class="taskHistory"></p>
+          		<div class="row" id="taskList"></div>
+            </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- MARKETING -->
+   
+    <!-- CONTACT US -->
+    <div id="contact-us">
+        <div class="jumbotron">
+            <div class="container">
+                <h1 style="font-size: 3vw"><i>About</i></h1>
+                <p>The pomodoro technique is useful for focus and task management. Set a goal to focus on a specific task for 25 minutes and then take a short 5 minute break.</p>
+                <hr />
+                <p> Developed by Jonathan Maddison 
+                    <br /> Contact me: jonathanwmaddison@gmail.com
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>Webpack Boilerplate built by <a href="https://github.com/geniuscarrier">@geniuscarrier</a>.</p>
+        <p>
+            <a href="#" id="scrollTo-myCarousel">Back to top</a>
+        </p>
+    </footer>
+    <!--EXAMPLE PAGE ENDS-->
+    <script src="build/bundle.js"></script>
+</body>
+
+</html>
