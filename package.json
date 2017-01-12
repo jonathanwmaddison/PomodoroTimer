@@ -7,7 +7,7 @@
     "build": "npm run lint && webpack --config webpack.config.js -p",
     "dev": "npm run lint && webpack-dev-server --config webpack.dev.config.js --inline",
     "lint": "./node_modules/.bin/eslint js",
-    "start": "node server.js"
+    "start": "npm run lint && webpack --config webpack.config.js -p"
   },
   "author": "Jonathan Maddison",
   "license": "ISC",
