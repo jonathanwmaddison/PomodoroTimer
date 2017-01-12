@@ -11,7 +11,7 @@
   },
   "author": "Jonathan Maddison",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "animate.css": "git+https://github.com/daneden/animate.css.git",
     "babel-core": "^6.7.2",
     "babel-eslint": "^6.1.0",
