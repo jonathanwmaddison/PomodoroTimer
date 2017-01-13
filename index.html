@@ -55,7 +55,9 @@
         </div>
    
         <div id = "container" class="container">
-            <iframe id = "video" src="" width="0" height="0" frameborder="0" allowfullscreen></iframe>
+            <div class="row text-center">
+                <iframe id = "video" src="" width="0" height="0" frameborder="0" allowfullscreen></iframe>
+            </div>
             <div id="currentTask" class="row text-center">
                 <div class="col-xs-4 col-xs-offset-4">
       		        <h4 id="workOrBreak"> Work </h4>
@@ -71,6 +73,7 @@
                     <button type="button" class="controlButtons" onclick="submitTask(document.getElementById('taskForm').value)">Track</button>
                 </div>
             </div>
+            <br>
         	<div class="row" >
         			<div class = "button-row col-xs-4"><input class="controlButtons" type="button" value="Start" onclick="startTimer()"/></div>
  		        	<div class = "button-row col-xs-4"><input class="controlButtons " type="button" value="Pause" onclick="stopTimer()"/></div>
@@ -78,7 +81,7 @@
             </div>
         	<div class="row text-center">
         		<label class="switch" data-toggle="tooltip" title="Toggle Work/Break">
-          			<input type="checkbox" onclick="switchDisplay()">
+          			<input id="workBreakToggle" type="checkbox" onclick="switchDisplay()">
           			<div class="slider round"></div>
         		</label>
         	</div>

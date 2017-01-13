@@ -31,20 +31,25 @@ function updateHtml(initial){
       document.getElementById("task"+taskCount).innerHTML = convertTime(taskElapsed);
     }
     if (currentTimeLeft<=0 && work){
-      window.switchDisplay();
+      document.getElementById('workBreakToggle').click()
       document.getElementById("video").src = url;
       document.getElementById("video").width = 250;
       document.getElementById("video").height = 200;
       document.getElementById("workOrBreak").innerHTML = "Take A Break";
-      work=false; 
+      document.getElementById("timeLeft")
+      work=false;
+      startTimer(); 
     }
     else if (currentTimeLeft<=0 && !work){
-      window.switchDisplay()
+    document.getElementById('workBreakToggle').click()      
       document.getElementById("video").src = chimeUrl;
       document.getElementById("video").width = 0;
       document.getElementById("video").height = 0;
       document.getElementById("workOrBreak").innerHTML = currentTask;
+      document.getElementById("timeLeft")
       work=true;
+      startTimer(); 
+
     } else {
       document.getElementById("timeLeft").innerHTML = convertTime(currentTimeLeft);
       document.getElementsByClassName("showTime")[0].innerHTML = convertTime(currentTimeLeft);
@@ -125,8 +130,10 @@ window.addTime = function (){
     document.getElementById("timeLeft").innerHTML = convertTime(currentTimeLeft);
   } else if(!running & !paused) {
     if(work) {
-      initWorkTime+=60;
-      document.getElementById("timeLeft").innerHTML = convertTime(initWorkTime);
+      if(!totalSeconds) {totalSeconds=initWorkTime;}
+      currentTimeLeft+=60;
+      initWorkTime+=60
+      document.getElementById("timeLeft").innerHTML = convertTime(currentTimeLeft);
     } else {
       initBreakTime+=60;
       document.getElementById("timeLeft").innerHTML = convertTime(initBreakTime);
@@ -135,15 +142,17 @@ window.addTime = function (){
 }
 
 window.removeTime = function(){
-    if(running & totalSeconds>=60){
+    if(running & currentTimeLeft>=60){
     totalSeconds-=60;    
   } else if (paused & !running & currentTimeLeft>=60) {
     currentTimeLeft-=60;
     document.getElementById("timeLeft").innerHTML = convertTime(currentTimeLeft);
   } else if(!running & !paused) {
     if(work & initWorkTime>=120) {
-      initWorkTime-=60;
-      document.getElementById("timeLeft").innerHTML = convertTime(initWorkTime);
+      if(!totalSeconds) {totalSeconds=initWorkTime;}
+      currentTimeLeft-=60;
+      initWorkTime-=60
+      document.getElementById("timeLeft").innerHTML = convertTime(currentTimeLeft);
     } else if(!work & initBreakTime >= 120) {
       initBreakTime-=60;
       document.getElementById("timeLeft").innerHTML = convertTime(initBreakTime);
