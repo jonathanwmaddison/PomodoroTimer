@@ -4,8 +4,8 @@
 @import "color";
 @import "carousel";
 
-
 //MY CSS
+
 #timeLeft .minSecFormat{
   font-size: 2vw;
 }
@@ -13,6 +13,9 @@
  background-color: #B4BAA9;
  width: 100vw;
  padding: 0;
+
+}
+.timer-container{
 
 }
 .glyphicon {
@@ -40,9 +43,11 @@ button, input, select, textarea {
 }
 
 body{
+  margin: 0;
+  padding: 0;
   background-color: #B4BAA9;
   font-family: 'Raleway';
-    position: relative;
+  position: relative;
 
 }
 h1{
@@ -166,10 +171,12 @@ input:checked + .slider:before {
   padding-bottom: .5vw;
   margin-bottom: 2vw;
   width: 75vw;
+  margin-left: 12.5vw
 }
 #taskList{
     font-size: 1.5vw;
-
+    margin-right: 0;
+    margin-left: 0;
 }
 .taskHistory {
   font-size: 1.5vw;
